@@ -1,16 +1,16 @@
 import Image from "next/image";
 export default function HeroSection() {
   return (
-    <section className="bg-[#F0F2F3] rounded-bl-3xl w-[1321px] h-[850px] m-auto flex justify-center items-center">
-      <div className="flex justify-around items-center">
-        <div className="flex justify-between flex-col w-[557px]">
+    <section className="bg-[#F0F2F3] rounded-bl-3xl md:w-[1321px] w-full md:h-[850px] h-[450px] m-auto md:flex  justify-center items-center">
+      <div className="md:flex justify-around items-center space-y-5 md:space-y-0">
+        <div className="flex justify-between flex-col items-center md:items-start md:w-[557px] w-full">
             <p className="py-4">WELCOME TO CHAIRY</p>
-          <div className="text-5xl font-bold w-[557px] h-[198px]">
+          <div className=" md:text-5xl flex flex-col items-center md:items-start text-xl font-bold md:w-[557px] w-full md:h-[198px]">
             <p>Best Furniture</p>
             <p>Collection For Your</p>
             <p>Interior.</p>
           </div>
-          <div className="flex justify-around bg-[#029FAE] w-[171] py-4 rounded-xl">
+          <div className="flex justify-around bg-[#029FAE] w-[171px] md:py-4 py-2 rounded-xl">
             <button className="text-white">Shop Now</button>
             <Image
               src="/image/Right 24px.png"
@@ -21,12 +21,13 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        <div className="w-[434px] h-[584px]">
+        <div className="md:w-[434px] w-full h-[584px]">
           <Image
             src="/image/Product Image.png"
             width={434}
             height={584}
             alt="Chair"
+            className="w-[200px] h-[220px] md:w-[434px] md:h-[584px]"
           />
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Footer() {
                 alt="Logo Icon"
               />
             </div>
-            <h1>Comforty</h1>
+            <h1 className="text-[#272343]">Comforty</h1>
           </div>
           <p className="text-[#272343]">
             Vivamus tristique odio sit amet velit semper, eu posuere turpis
