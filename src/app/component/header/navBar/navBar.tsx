@@ -3,7 +3,6 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -15,11 +14,21 @@ export default function NavBar() {
       <div className="flex md:w-[1321px] w-full h-[74px] justify-between m-auto">
         <div className="md:flex hidden items-center text-gray-600">
           <ul className=" flex gap-6">
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Product</li>
-            <li>Pages</li>
-            <li>About</li>
+            <li>
+              <Link href="/">Home</Link>
+              </li>
+            <li>
+            <Link href="/">Shop</Link>
+              </li>
+            <li>
+            <Link href="/products">Product</Link>
+              </li>
+            <li>
+            <Link href="/">Pages</Link>
+            </li>
+            <li>
+            <Link href="/">About</Link>
+            </li>
           </ul>
         </div>
 

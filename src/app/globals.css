@@ -64,3 +64,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.grayColor{
+  background-color: rgba(30, 40, 50, 0.08);
+}

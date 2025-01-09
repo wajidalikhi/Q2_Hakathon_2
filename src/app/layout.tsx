@@ -5,6 +5,7 @@ import TopHeader from "./component/header/topHeade/TopHeader";
 import Hearder from "./component/header/Header/Hearder";
 import NavBar from "./component/header/navBar/navBar";
 import Footer from "./component/footer";
+import PaymentFooter from "./component/section/PaymentFooter";
 
 // Import Fonts
 const geistSans = localFont({
@@ -45,6 +46,8 @@ export default function RootLayout({
 
         {/* Footer */}
         <Footer />
+        {/* PaymentFooter */}
+        <PaymentFooter />
       </body>
     </html>
   );
