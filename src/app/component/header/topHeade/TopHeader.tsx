@@ -4,11 +4,9 @@ export default function TopHeader() {
   return (
     <>
       <section className="bg-black w-full h-[45px] flex justify-center items-center">
-        <div className="flex md:w-[1321px] w-full justify-between m-auto">
-          <div className="flex gap-6 text-gray-300">
-            <p className="text-xs md:text-base">
-              Free Shipping On All Orders Over $50
-            </p>
+        <div className=" flex md:w-[1321px] w-full justify-between m-auto">
+          <div className=" flex gap-6 text-gray-300">
+            <p className="text-xs md:text-base">Free Shoping On All Orders Over $50</p>
           </div>
           <div className="flex w-[215px] h-[17px] md:gap-4 gap-2 text-gray-300 text-xs md:text-base">
             <div className="flex items-center gap-1 w-[37px] h-[17px]">
