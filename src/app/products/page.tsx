@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Subscribe from "../component/Subscribe";
-import SingleProductPage from "../component/section/SingleProductPage";
+
 
 export default function Products() {
   const products = [
@@ -77,7 +77,7 @@ export default function Products() {
       
     </div>
     <Subscribe/>
-    <SingleProductPage/>
+    
 
 
           </>

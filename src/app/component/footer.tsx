@@ -5,14 +5,14 @@ export default function Footer() {
     <footer className="w-full mt-auto py-8 px-4 flex justify-center text-white border-t-2 border-b-2">
       <div className="flex justify-between w-full max-w-[1321px] ">
         {/* Logo and Description */}
-        <div className="flex flex-col justify-between w-[350px] h-[198px]">
+        <div className="flex flex-col justify-between w-[350px] h-[198px] pr-16">
           <div className="flex items-center text-3xl font-bold gap-2">
             <Image src="/image/Logo Icon.png" width={40} height={40} alt="Logo Icon" />
             <h1 className="text-[#272343]">Comforty</h1>
           </div>
-          <p className="text-[#272343] mt-4 flex flex-col w-[350px] h-[198px]">
-            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. 
-            <p>Cras egestas purus.</p>
+          <p className="text-[#272343] text-base mt-4">
+            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum.
+            Cras egestas purus.
           </p>
           
           <div className="flex gap-4 mt-4">

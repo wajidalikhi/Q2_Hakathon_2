@@ -6,6 +6,7 @@ import Hearder from "./component/header/Header/Hearder";
 import NavBar from "./component/header/navBar/navBar";
 import Footer from "./component/footer";
 import PaymentFooter from "./component/section/PaymentFooter";
+import { CartProvider } from "./context/CartContext";
 
 // Import Fonts
 const geistSans = localFont({
@@ -42,12 +43,15 @@ export default function RootLayout({
         <NavBar />
 
         {/* Main Content */}
-        <main className="flex-grow">{children}</main>
+        <CartProvider>{children}</CartProvider>
+        
+        
 
         {/* Footer */}
         <Footer />
         {/* PaymentFooter */}
         <PaymentFooter />
+        
       </body>
     </html>
   );

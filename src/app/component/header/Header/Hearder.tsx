@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Hearder() {
   return (
     <>
@@ -19,12 +20,14 @@ export default function Hearder() {
             </div>
             <button>
               <div className=" items-end">
+                <Link href='../cart'>
                 <Image
                   src="/image/Cart.png"
                   width={96}
                   height={240}
                   alt="Chart Box"
-                />
+                  />
+                </Link>
               </div>
             </button>
           </div>
