@@ -4,20 +4,24 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { getAllProducts, Product } from "@/sanity/lib/data";
 import Link from "next/link";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function HomeSection() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false); // Handle errors
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const fetchedProducts = await getAllProducts();
         setProducts(fetchedProducts);
+        setFilteredProducts(fetchedProducts);
       } catch (err) {
         console.error("Error fetching products:", err);
-        setError(true); // Set error state
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -25,12 +29,20 @@ export default function HomeSection() {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    const query = searchQuery.toLowerCase();
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(query)
+    );
+    setFilteredProducts(filtered);
+  }, [searchQuery, products]);
+
   if (loading) {
-    return <p>Loading...</p>; // Loading indicator
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p>Error loading products. Please try again later.</p>; // Error message
+    return <p>Error loading products. Please try again later.</p>;
   }
 
   return (
@@ -40,7 +52,7 @@ export default function HomeSection() {
         {[...Array(7)].map((_, idx) => (
           <Image
             key={idx}
-            src={`/image/Logo${idx > 0 ? ` (${idx})` : ""}.png`}
+            src={`/image/Logo${idx === 0 ? "" : ` (${idx})`}.png`} // Ensure logo path is correct
             height={100}
             width={100}
             alt={`logo-${idx}`}
@@ -49,13 +61,20 @@ export default function HomeSection() {
         ))}
       </div>
 
-      {/* Featured Products */}
+      {/* Featured Products Section */}
       <div className="flex flex-col w-full justify-between m-auto mb-10">
-        <div className="w-full mb-5">
-          <p className="text-[32px] font-semibold">Featured Products</p>
+        {/* Title and SearchBar in one line */}
+        <div className="w-full mb-5 flex items-center justify-between">
+          <p className="flex justify-start w-1/2 text-[32px] font-semibold">Featured Products</p>
+          {/* SearchBar placed next to the title */}
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </div>
+
         <div className="flex flex-wrap gap-5">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <Link key={product._id} href={`/productDetails/${product._id}`}>
               <div className="w-[312px] flex flex-col justify-between relative">
                 <Image
